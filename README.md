@@ -22,7 +22,7 @@
 ### Introduction
 
 <p align="center">
-  <img height="400px" src="https://github.com/user-attachments/assets/dab87ea2-58be-424c-b1ef-6071786cb504" />
+  <img height="400px" src="https://github.com/user-attachments/assets/1de55c27-e135-4d7a-90a9-75e573e2c34e" />
 </p>
 
 **Html Renderer** is a plugin that adds support for rendering html in chat bubbles within the [**React ChatBotify Core Library**](https://react-chatbotify.com). By default, the core library does not ship with html support. This plugin relies on chatbot events to intercept messages and determine if html rendering logic has to be applied. The demo gif above should give you a pretty good idea of what this plugin is capable of doing.
@@ -63,7 +63,7 @@ The plugin is incredibly straightforward to use and is [**available on npm**](ht
    const MyComponent = () => {
      const flow = {
        start: {
-         message: "### What is your age?",
+         message: "<h4>What is your age?</h4>",
          renderHtml: ["BOT", "USER"]
        } as HtmlRendererBlock
      }
@@ -123,7 +123,7 @@ import HtmlRenderer from "@rcb-plugins/html-renderer";
 const MyComponent = () => {
   const flow = {
     start: {
-      message: "What is your age?",
+      message: "<h4>What is your age?</h4>",
       renderHtml: ["USER", "BOT"],
     },
     // ... other blocks
