@@ -13,7 +13,7 @@
   "files": [
     "./dist"
   ],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple plugin for rendering html messages in React ChatBotify.",
   "type": "module",
   "main": "./dist/index.cjs",
