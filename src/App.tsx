@@ -28,7 +28,6 @@ const App = () => {
 	return (
 		<ChatBot
 			id="chatbot-id"
-			settings={{audio: {disabled: false}, botBubble: {simStream: false}}}
 			plugins={plugins}
 			flow={flow}
 		></ChatBot>

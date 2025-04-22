@@ -10,6 +10,7 @@ import {
 	useMessages,
 	useSettings,
 	useChatHistory,
+	RcbStartSimulateStreamMessageEvent,
 } from "react-chatbotify";
 
 import HtmlWrapper from "../components/HtmlWrapper";
@@ -55,7 +56,8 @@ const useRcbPlugin = (pluginConfig?: PluginConfig) => {
 		 * @param event message event received
 		 */
 		const handleMessageEvent = async (
-			event: RcbPreInjectMessageEvent | RcbChunkStreamMessageEvent | RcbStartStreamMessageEvent
+			event: RcbPreInjectMessageEvent | RcbChunkStreamMessageEvent
+			| RcbStartSimulateStreamMessageEvent | RcbStartStreamMessageEvent
 		) => {
 			const sender = event.data.message?.sender.toUpperCase();
 
@@ -69,8 +71,8 @@ const useRcbPlugin = (pluginConfig?: PluginConfig) => {
 				return;
 			}
 
-			if (event.type === "rcb-pre-inject-message") {
-				(event as RcbPreInjectMessageEvent).data.simStreamChunker = parseHtmlMessage;
+			if (event.type === "rcb-start-simulate-stream-message") {
+				(event as RcbStartSimulateStreamMessageEvent).data.simulateStreamChunker = parseHtmlMessage;
 			}
 
 			event.data.message.contentWrapper = component;
@@ -100,12 +102,14 @@ const useRcbPlugin = (pluginConfig?: PluginConfig) => {
 		window.addEventListener("rcb-pre-inject-message", handleMessageEvent);
 		window.addEventListener("rcb-chunk-stream-message", handleMessageEvent);
 		window.addEventListener("rcb-start-stream-message", handleMessageEvent);
+		window.addEventListener("rcb-start-simulate-stream-message", handleMessageEvent);
 		window.addEventListener("rcb-start-speak-audio", handleAudioEvent);
 
 		return () => {
 			window.removeEventListener("rcb-pre-inject-message", handleMessageEvent);
 			window.removeEventListener("rcb-chunk-stream-message", handleMessageEvent);
 			window.removeEventListener("rcb-start-stream-message", handleMessageEvent);
+			window.removeEventListener("rcb-start-simulate-stream-message", handleMessageEvent);
 			window.removeEventListener("rcb-start-speak-audio", handleAudioEvent);
 		};
 	}, [getBotId, getFlow, shouldRenderHtml]);
@@ -121,6 +125,7 @@ const useRcbPlugin = (pluginConfig?: PluginConfig) => {
 			event: {
 				rcbPreInjectMessage: true,
 				rcbChunkStreamMessage: true,
+				rcbStartSimulateStreamMessage: true,
 				rcbStartStreamMessage: true,
 				rcbStartSpeakAudio: true,
 			},
