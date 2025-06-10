@@ -21,53 +21,53 @@ import {
 	RcbPostLoadChatBotEvent,
 	RcbStartSimulateStreamMessageEvent,
 	RcbStopSimulateStreamMessageEvent,
-} from "react-chatbotify";
+} from 'react-chatbotify';
 
 declare global {
 	// for custom rcb events
 	interface WindowEventMap {
 		// audio
-		"rcb-start-speak-audio": RcbStartSpeakAudioEvent;
-		"rcb-toggle-audio": RcbToggleAudioEvent;
+		'rcb-start-speak-audio': RcbStartSpeakAudioEvent;
+		'rcb-toggle-audio': RcbToggleAudioEvent;
 
 		// notifications:
-		"rcb-toggle-notifications": RcbToggleNotificationsEvent;
+		'rcb-toggle-notifications': RcbToggleNotificationsEvent;
 
 		// voice
-		"rcb-toggle-voice": RcbToggleVoiceEvent;
+		'rcb-toggle-voice': RcbToggleVoiceEvent;
 
 		// chat window
-	   	"rcb-toggle-chat-window": RcbToggleChatWindowEvent;
+		'rcb-toggle-chat-window': RcbToggleChatWindowEvent;
 
 		// messages
-		"rcb-pre-inject-message": RcbPreInjectMessageEvent;
-		"rcb-post-inject-message": RcbPostInjectMessageEvent;
-		"rcb-start-simulate-stream-message": RcbStartSimulateStreamMessageEvent;
-		"rcb-stop-simulate-stream-message": RcbStopSimulateStreamMessageEvent;
-		"rcb-start-stream-message": RcbStartStreamMessageEvent;
-		"rcb-chunk-stream-message": RcbChunkStreamMessageEvent;
-		"rcb-stop-stream-message": RcbStopStreamMessageEvent;
-		"rcb-remove-message": RcbRemoveMessageEvent;
+		'rcb-pre-inject-message': RcbPreInjectMessageEvent;
+		'rcb-post-inject-message': RcbPostInjectMessageEvent;
+		'rcb-start-simulate-stream-message': RcbStartSimulateStreamMessageEvent;
+		'rcb-stop-simulate-stream-message': RcbStopSimulateStreamMessageEvent;
+		'rcb-start-stream-message': RcbStartStreamMessageEvent;
+		'rcb-chunk-stream-message': RcbChunkStreamMessageEvent;
+		'rcb-stop-stream-message': RcbStopStreamMessageEvent;
+		'rcb-remove-message': RcbRemoveMessageEvent;
 
 		// chat history
-		"rcb-load-chat-history": RcbLoadChatHistoryEvent;
+		'rcb-load-chat-history': RcbLoadChatHistoryEvent;
 
 		// path
-		"rcb-change-path": RcbChangePathEvent;
+		'rcb-change-path': RcbChangePathEvent;
 
 		// toast
-		"rcb-show-toast": RcbShowToastEvent;
-		"rcb-dismiss-toast": RcbDismissToastEvent;
+		'rcb-show-toast': RcbShowToastEvent;
+		'rcb-dismiss-toast': RcbDismissToastEvent;
 
 		// user input submission
-		"rcb-user-submit-text": RcbUserSubmitTextEvent;
-		"rcb-user-upload-file": RcbUserUploadFileEvent;
+		'rcb-user-submit-text': RcbUserSubmitTextEvent;
+		'rcb-user-upload-file': RcbUserUploadFileEvent;
 
 		// textarea change value
-		"rcb-text-area-change-value": RcbTextAreaChangeValueEvent;
+		'rcb-text-area-change-value': RcbTextAreaChangeValueEvent;
 
 		// chatbot loading
-		"rcb-pre-load-chatbot": RcbPreLoadChatBotEvent;
-		"rcb-post-load-chatbot": RcbPostLoadChatBotEvent;
+		'rcb-pre-load-chatbot': RcbPreLoadChatBotEvent;
+		'rcb-post-load-chatbot': RcbPostLoadChatBotEvent;
 	}
 }

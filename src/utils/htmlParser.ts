@@ -1,17 +1,17 @@
 /**
  * Parses message that has html enabled (holds html tags as individual elements to enable smooth streaming).
- * 
+ *
  * @param message message to parse
  */
 export const parseHtmlMessage = (message: string) => {
 	const result: string[] = [];
-	let currentTag = "";
+	let currentTag = '';
 	let isInTag = false;
 
 	for (let i = 0; i < message.length; i++) {
 		const char = message[i];
 
-		if (char === "<") {
+		if (char === '<') {
 			// detects start of html tag
 			if (!isInTag) {
 				isInTag = true;
@@ -20,14 +20,14 @@ export const parseHtmlMessage = (message: string) => {
 				result.push(currentTag);
 				currentTag = char;
 			}
-		} else if (char === ">") {
+		} else if (char === '>') {
 			// detects end of html tag
 			currentTag += char;
 			result.push(currentTag);
-			currentTag = "";
+			currentTag = '';
 			isInTag = false;
 		} else {
-			// handles normal character 
+			// handles normal character
 			if (isInTag) {
 				currentTag += char;
 			} else {
@@ -35,12 +35,12 @@ export const parseHtmlMessage = (message: string) => {
 			}
 		}
 	}
-  
-	if (currentTag !== "") {
+
+	if (currentTag !== '') {
 		result.push(currentTag);
 	}
 	return result;
-}
+};
 
 /**
  * Strips HTML tags from a string using DOMParser.
@@ -48,12 +48,12 @@ export const parseHtmlMessage = (message: string) => {
  * @param html HTML string to strip tags from
  */
 export const stripHtml = (html: string) => {
-	if (typeof window.DOMParser !== "undefined") {
+	if (typeof window.DOMParser !== 'undefined') {
 		const parser = new DOMParser();
-		const doc = parser.parseFromString(html, "text/html");
-		return doc.body.textContent || "";
+		const doc = parser.parseFromString(html, 'text/html');
+		return doc.body.textContent || '';
 	}
 
 	// fallback for environments without DOMParser
-	return html.replace(/<\/?[^>]+(>|$)/g, "");
-}
+	return html.replace(/<\/?[^>]+(>|$)/g, '');
+};
