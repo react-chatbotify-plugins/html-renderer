@@ -114,7 +114,7 @@ As you may be able to tell from above, there are 5 configurable sections within 
 
 #### Rendering Html
 
-To render html in messages, add the `renderHtml` attribute to any Block that requires html rendering. The `renderHtml` attribute is an array that accepts `"USER"` and/or `"BOT"`. An example can be seen below:
+To render html in messages, add the `renderHtml` attribute to any Block that requires html rendering. The `renderHtml` attribute is an array that accepts senders such as `"USER"` and/or `"BOT"`. An example can be seen below:
 
 ```javascript
 import ChatBot from "react-chatbotify";
