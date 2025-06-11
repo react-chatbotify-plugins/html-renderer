@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200px" src="https://raw.githubusercontent.com/react-chatbotify-plugins/html-renderer/main/src/assets/logo.png" />
+  <img width="200px" src="https://raw.githubusercontent.com/react-chatbotify-plugins/html-renderer/main/src/assets/logo.webp" />
   <h1 align="center">Html Renderer</h1>
 </p>
 

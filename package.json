@@ -1,5 +1,6 @@
 {
   "name": "@rcb-plugins/html-renderer",
+  "pluginLogo": "https://cdn.jsdelivr.net/gh/react-chatbotify-plugins/html-renderer@main/src/assets/logo.webp",
   "homepage": "https://github.com/React-ChatBotify-Plugins/html-renderer",
   "keywords": [
     "react",
