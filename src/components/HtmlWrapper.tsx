@@ -8,7 +8,11 @@ import { Interweave } from 'interweave';
 const HtmlWrapper = ({ children }: { children: React.ReactNode }) => {
 	// ensures that htmlText is a string
 	const htmlText = typeof children === 'string' ? children : '';
-	return <Interweave content={htmlText} />;
+	return (
+		<div style={{ whiteSpace: 'normal' }}>
+			<Interweave content={htmlText} />
+		</div>
+	);
 };
 
 export default HtmlWrapper;
