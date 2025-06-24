@@ -1,3 +1,8 @@
+## v0.3.2 (24-06-2025)
+
+**Fixed:**
+- Fixed an issue with whitespace property causing render inconsistencies in wrapper
+
 ## v0.3.1 (12-06-2025)
 
 **Note:**
